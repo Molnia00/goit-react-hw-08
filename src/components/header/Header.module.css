@@ -1,0 +1,12 @@
+.headerContainer{ 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #8C3B70;
+    
+}
+
+.textheader{
+    color: white;
+    box-shadow: #8C3B70;
+}
