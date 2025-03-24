@@ -7,7 +7,6 @@ import Todos from './pages/todos'
 import Header from './components/header/header'
 import Layout from './components/Layout'
 import Home from './pages/home'
-import NotFound from './pages/notFound/notFound'
 
 function App() {
 
@@ -20,7 +19,6 @@ function App() {
 
       <Route path='login' element={ <Login/>}></Route>
       <Route path='register' element={<Register/> }></Route>
-      <Route path='*' element={<NotFound />}></Route>
       </Routes>)
 }
 
