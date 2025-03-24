@@ -6,8 +6,8 @@ import Register from './pages/registerAndLogin/Register'
 import Todos from './pages/todos'
 import Header from './components/header/header'
 import Layout from './components/Layout'
-import Home from './pages/home.jsx'
-import NotFound from './pages/notFound/notFound.jsx';
+import Home from './pages/Home'
+import NotFound from './pages/NotFound';
 
 function App() {
 
