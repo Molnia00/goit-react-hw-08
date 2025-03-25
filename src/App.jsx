@@ -1,12 +1,12 @@
 
-import { Link, Route, Routes } from 'react-router-dom'
-import './App.css'
-import Login from './pages/registerAndLogin/Login'
-import Register from './pages/registerAndLogin/Register'
-import Todos from './pages/todos'
-import Header from './components/header/header'
-import Layout from './components/Layout'
-import Home from './pages/Home'
+import { Link, Route, Routes } from 'react-router-dom';
+import './App.css';
+import Login from './pages/registerAndLogin/Login';
+import Register from './pages/registerAndLogin/Register';
+import Todos from './pages/todos';
+import Header from './components/header/header';
+import Layout from './components/Layout';
+import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 
 function App() {
