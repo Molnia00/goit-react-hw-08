@@ -7,7 +7,7 @@ axios.defaults.baseURL = 'https://connections-api.goit.global/';
 export const register = createAsyncThunk('auth/register',
     async (credentials, thunkAPI) => {
     try {
-        const { data } = await axios.post('users/singup', credentials);
+        const { data } = await axios.post('users/signup', credentials);
         return data;
     }
     catch (error) {
