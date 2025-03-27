@@ -8,6 +8,7 @@ import Header from './components/header/header';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import ContactsListShown from './pages/contactsList';
 
 function App() {
 
@@ -18,7 +19,8 @@ function App() {
            <Route path='todos' element={<Todos/> }></Route>
       </Route>
 
-      <Route path='login' element={ <Login/>}></Route>
+      <Route path='login' element={<Login />}></Route>
+      <Route path='cont' element={<ContactsListShown/>}></Route>
       <Route path='register' element={<Register/> }></Route>
       <Route path='*' element={<NotFound />}></Route>
       </Routes>)

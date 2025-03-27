@@ -1,5 +1,5 @@
 const initialState = {
-  users: {
+  user: {
     name: '',
     email: '',
   },
@@ -11,5 +11,5 @@ const initialState = {
 
 
 
-export const selectUser = state => state.users.users;
-export const selectLoggedIn = state => state.users.isLoggedIn;
+export const selectUser = state => state.auth.user;
+export const selectLoggedIn = state => state.auth.isLoggedIn;

@@ -6,7 +6,15 @@
     
 }
 
-.textheader{
+.navLink{
     color: white;
     box-shadow: #8C3B70;
+    padding: 15px;
+    font-size: 30px;
+}
+
+.navigation{
+    display: flex;
+    flex-direction: row;
+    gap:15 px;
 }
