@@ -14,9 +14,6 @@ function Header() {
         <NavLink to="/register" className={s.navLink}>
           Register
                 </NavLink>
-                <NavLink to="/cont" className={s.navLink}>
-          Contact
-                </NavLink>
                 
 
       </nav>
