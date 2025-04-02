@@ -13,6 +13,7 @@ function Register() {
 
     const dispatch = useDispatch()
     const handleSubmit = (values, options) => {
+        console.log(values);
         options.resetForm();
         dispatch(register(values))
     };
