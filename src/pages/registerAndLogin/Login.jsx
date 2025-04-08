@@ -1,6 +1,8 @@
 import { Formik, Form, Field } from "formik"
 import s from './RegisterAndLogin.module.css'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/auth/operations";
 
 function Login() {
     const initialValues = {
@@ -8,9 +10,12 @@ function Login() {
         email:'',
     };
 
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const handleSubmit = (values, options) => {
         console.log(values)
         options.resetForm()
+        dispatch(login(values)).unwrap().then(() => navigate('/'))
     }
     return (<>
         <h2>Login</h2>
