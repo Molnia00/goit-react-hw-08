@@ -1,6 +1,7 @@
 
 import { useDispatch } from "react-redux";
-import { searchItems } from "../redux/filtersSlice";
+import { searchItems } from "../../redux/contactRedux/filtersSlice";
+
 
 
 function SearchBox(){
