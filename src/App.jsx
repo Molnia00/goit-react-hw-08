@@ -1,6 +1,5 @@
-
-import { Link, Route, Routes } from 'react-router-dom';
 import './App.css';
+import { Link, Route, Routes } from 'react-router-dom';
 import Login from './pages/registerAndLogin/Login';
 import Register from './pages/registerAndLogin/Register';
 import Header from './components/header/header';
