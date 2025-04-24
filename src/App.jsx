@@ -7,9 +7,16 @@ import Layout from './Layout';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Contactss from './pages/contactss/Contactss'
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import {  refreshThunk } from './redux/auth/operations';
 
 function App() {
 
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(refreshThunk())
+  }, [dispatch])
 
 
   return (
