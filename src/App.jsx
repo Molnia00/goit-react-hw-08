@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import {  refreshThunk } from './redux/auth/operations';
 import {  selectIsRefreshing } from './redux/auth/selectors';
 import { PrivateRoute } from './components/privateItems';
+import { PublicRoute } from './components/publicRoutes';
 
 function App() {
 
@@ -20,7 +21,6 @@ function App() {
   useEffect(() => {
     dispatch(refreshThunk())
   }, [dispatch])
-
 
   return isRefreshing ? null : (
       <Routes>
@@ -31,8 +31,9 @@ function App() {
             <Contactss />
           </PrivateRoute>
         }></Route>
-      <Route path='login' element={<Login />}></Route>
-      <Route path='register' element={<Register/> }></Route>
+      <Route path='login' element={<PublicRoute><Login /></PublicRoute>
+}></Route>
+      <Route path='register' element={<PublicRoute><Register/></PublicRoute> }></Route>
       <Route path='*' element={<NotFound />}></Route>
       </Route>
       
