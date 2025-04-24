@@ -49,12 +49,10 @@ export const refreshThunk = createAsyncThunk('auth/refresh',
     async (_, thunkAPI) => {
         const savedToken = thunkAPI.getState().auth.token;
         console.log(savedToken)
-
-        if (savedToken === null) {
+        if (savedToken === "") {
             return thunkAPI.rejectWithValue('Token is not exist')
-        }setAuthHeaders(data.token)
-
-
+        }
+        setAuthHeaders(savedToken)
         try {
             const { data } = await axios.get('/users/current');
             return data;

@@ -7,23 +7,30 @@ import Layout from './Layout';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Contactss from './pages/contactss/Contactss'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import {  refreshThunk } from './redux/auth/operations';
+import {  selectIsRefreshing } from './redux/auth/selectors';
+import { PrivateRoute } from './components/privateItems';
 
 function App() {
 
   const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
   useEffect(() => {
     dispatch(refreshThunk())
   }, [dispatch])
 
 
-  return (
+  return isRefreshing ? null : (
       <Routes>
         <Route path='/' element={<Layout/>}>
            <Route index element={<Home/> }></Route>
-           <Route path='contacts' element={<Contactss/>}></Route>
+        <Route path='contacts' element={
+          <PrivateRoute>
+            <Contactss />
+          </PrivateRoute>
+        }></Route>
       <Route path='login' element={<Login />}></Route>
       <Route path='register' element={<Register/> }></Route>
       <Route path='*' element={<NotFound />}></Route>
