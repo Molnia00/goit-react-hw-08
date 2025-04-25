@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { setAuthHeaders } from "../auth/operations";
 
 
 export const urlApi = axios.create({
@@ -8,6 +9,12 @@ export const urlApi = axios.create({
 
 export const fetchContacts = createAsyncThunk('contacts/fetchAll',
     async (body, thunkAPI) => {
+            const savedToken = thunkAPI.getState().contacts.token;
+        console.log(savedToken)
+        if (savedToken === "") {
+            return thunkAPI.rejectWithValue('Token is not exist')
+        }
+        setAuthHeaders(savedToken)
     try {
         const { data } = await urlApi.get('/contacts');
         return data;

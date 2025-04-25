@@ -11,8 +11,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import {  refreshThunk } from './redux/auth/operations';
 import {  selectIsRefreshing } from './redux/auth/selectors';
-import { PrivateRoute } from './components/privateItems';
 import { PublicRoute } from './components/publicRoutes';
+import { PrivateRoute } from './components/privateItems';
 
 function App() {
 
