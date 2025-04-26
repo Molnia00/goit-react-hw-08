@@ -3,9 +3,7 @@ import axios from "axios";
 import { setAuthHeaders } from "../auth/operations";
 
 
-export const urlApi = axios.create({
-    baseURL : 'https://connections-api.goit.global/'
-})
+
 
 export const fetchContacts = createAsyncThunk('contacts/fetchAll',
     async (body, thunkAPI) => {
@@ -16,7 +14,7 @@ export const fetchContacts = createAsyncThunk('contacts/fetchAll',
         }
         setAuthHeaders(savedToken)
     try {
-        const { data } = await urlApi.get('/contacts');
+        const { data } = await axios.get('/contacts');
         return data;
     }
     catch (error) {
@@ -29,7 +27,7 @@ export const fetchContacts = createAsyncThunk('contacts/fetchAll',
 export const deleteContact = createAsyncThunk('contacts/deleteContact',
     async (id, thunkAPI) => {
         try {
-        const { data } = await urlApi.delete(`/contacts/${contactId}`);
+        const { data } = await axios.delete(`/contacts/${contactId}`);
             return data;
             
     }
@@ -42,7 +40,7 @@ export const deleteContact = createAsyncThunk('contacts/deleteContact',
 export const addContact = createAsyncThunk('contacts/addContact',
     async (body, thunkAPI) => {
         try {
-        const { data } = await urlApi.post('contacts', body);
+        const { data } = await axios.post('contacts', body);
             return data;
             
     }
