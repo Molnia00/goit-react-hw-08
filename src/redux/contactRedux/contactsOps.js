@@ -7,12 +7,6 @@ import { setAuthHeaders } from "../auth/operations";
 
 export const fetchContacts = createAsyncThunk('contacts/fetchAll',
     async (body, thunkAPI) => {
-            const savedToken = thunkAPI.getState().contacts.token;
-        console.log(savedToken)
-        if (savedToken === "") {
-            return thunkAPI.rejectWithValue('Token is not exist')
-        }
-        setAuthHeaders(savedToken)
     try {
         const { data } = await axios.get('/contacts');
         return data;
@@ -27,7 +21,7 @@ export const fetchContacts = createAsyncThunk('contacts/fetchAll',
 export const deleteContact = createAsyncThunk('contacts/deleteContact',
     async (id, thunkAPI) => {
         try {
-        const { data } = await axios.delete(`/contacts/${contactId}`);
+        const { data } = await axios.delete(`/contacts/${id}`);
             return data;
             
     }
