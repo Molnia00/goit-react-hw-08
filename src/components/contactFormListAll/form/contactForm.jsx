@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import s from './IAmSoLazy.module.css'
 
 import { useDispatch } from "react-redux";
-import { addContact } from '../../../redux/contactRedux/contactsOps';
+import { addContact } from '../../../redux/contacts/operations';
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Required"),

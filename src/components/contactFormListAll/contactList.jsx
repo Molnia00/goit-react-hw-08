@@ -3,8 +3,8 @@ import s from './contact.module.css'
 import { useDispatch, useSelector } from "react-redux";
 
  import { useEffect } from 'react';
-import { contSelect, selectLoading, selectRejected } from '../../redux/contactRedux/contactsSlice';
-import { fetchContacts } from '../../redux/contactRedux/contactsOps';
+import { contSelect, selectLoading, selectRejected } from '../../redux/contacts/slice';
+import { fetchContacts } from '../../redux/contacts/operations';
 import Contact from './contacts';
 
 
